@@ -17,10 +17,10 @@ class Battlefield:
 
     def battle_phase(self):
         while self.dinosaur.health > 0 or self.robot.health > 0:
-            self.dinosaur.attack
-        else:
-            self.robot.attack
+            self.dinosaur.attack(self.robot)
+            print(f'Dinosaur attacked Robot')
+            self.robot.attack(self.dinosaur)
+            print(f'Robot attacked Dinosaur')
 
     def display_winner(self):
-        #print(f'')
         pass
